@@ -36,7 +36,9 @@
 
 
     <div class="container">
-      
+       <a href="{{url('/customer/create')}}">
+      <button class="btn btn-primary d-inline m-2 float-right">Add</button>
+      </a>
         <table class="table">
           <thead>
             <tr>
@@ -48,7 +50,34 @@
                <th>Status</th> 
             </tr>
           </thead>
-         
+          <tbody>
+            @foreach($customers as $customer)
+            <tr>
+                <td>{{$customer->name}}</td>
+                <td>{{$customer->email}}</td>
+                <td>{{$customer->address}}</td>
+                <td>
+                    @if($customer->gender == "F")
+                    Female
+                    @elseif($customer->gender == "M")
+                    Male
+                    @else
+                    Other
+                    @endif
+                </td>
+                <td>{{$customer->dob}}</td>
+                <td>{{$customer->status}}</td>
+                <td>
+                <a href="{{url('/customer/delete/')}}/{{$customer->customer_id}}">
+                <button class="btn btn-danger">Delete</button>
+               </a>
+               <a href="{{url('/customer/edit/')}}">
+                <button class="btn btn-primary">Edit</button>
+                </a>
+               </td>
+            </tr>
+            @endforeach
+          </tbody>
           
         </table>
     </div>

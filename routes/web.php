@@ -51,12 +51,19 @@ Route::post('/employee',[EmployeeController::class,'store']);
 
 
 // Route::get('/customer',[CustomerController ::class, 'index']);
-// Route::post('/customer',[CustomerController ::class,'store']);
+Route::post('/customer/add',[CustomerController ::class,'store']);
 
 Route::get('/customer',[CustomerController ::class,'view']);
 Route::get('/customer/create',[CustomerController::class,'create']);
 
-// Route::get('/customer/delete/{id}',[CustomerController::class,'delete'])->name('customer.delete');
+Route::get('/customer/edit',[CustomerController ::class,'edit']);
+Route::post('/customer/update',[CustomerController ::class,'customer_update']);
+
+
+
+Route::get('/customer/delete/{id}',[CustomerController::class,'delete']);
+
+
 
 Route::get('/',function(){
     return view('index');

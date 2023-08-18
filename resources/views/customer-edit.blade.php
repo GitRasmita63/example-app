@@ -41,7 +41,7 @@
     </div>
  </nav>
 
-  <form action="{{url('/')}}/customer/add" method="post">
+  <form action="{{url('/')}}/customer/update" method="post">
     @csrf
     <div class="container mt-4 card p-5 bg-white">
       <h2 class="text-center">Customer Registration Form</h2>
@@ -132,7 +132,7 @@
           </span>
         </div>
 
-        <button class="btn btn-primary mt-4"> Submit </button>
+        <button class="btn btn-primary mt-4"> Update </button>
 
       </div>
 </body>
