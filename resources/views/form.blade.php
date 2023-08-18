@@ -29,6 +29,31 @@
     </style> -->
 </head>
 <body>
+<nav class="navbar navbar-expand-lg navbar-light bg-dark ">
+    <div class="container-fluid ">
+        <a class="navbar-brand" href="#" style="color:white;">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"></span>
+          </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+         <ul class="navbar-nav mt-2 mt-lg-0 ms-5">
+            <li class="nav-item">
+               <a class="nav-link"  href="{{url('/')}}" style="color:white;">Home</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="{{url('/register')}}" style="color:white;">Register</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{url('/customer')}}" style="color:white;">Customer</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link " href="{{url('/employee')}}" style="color:white;">Employee</a>
+            </li>
+         </ul>
+     </div>
+    </div>
+ </nav>
+
     <form action="{{url('/')}}/register" method="post">
       @csrf
       

@@ -6,7 +6,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegistrationController;
 use App\Models\mamun;
 use App\Http\Controllers\EmployeeController;
-// use App\Models\Employee;
+use App\Http\Controllers\CustomerController;
+use App\Models\Customer;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,8 +32,8 @@ use App\Http\Controllers\EmployeeController;
 // Route::get('/courses', SingleActionController::class);
 
 
-// Route::get('/register',[RegistrationController::class, 'index']);
-// Route::post('/register',[RegistrationController::class,'register']);
+Route::get('/register',[RegistrationController::class, 'index']);
+Route::post('/register',[RegistrationController::class,'register']);
 
 
 
@@ -48,3 +49,15 @@ Route::get('/employee',[EmployeeController::class, 'index']);
 Route::post('/employee',[EmployeeController::class,'store']);
 
 
+
+// Route::get('/customer',[CustomerController ::class, 'index']);
+// Route::post('/customer',[CustomerController ::class,'store']);
+
+Route::get('/customer',[CustomerController ::class,'view']);
+Route::get('/customer/create',[CustomerController::class,'create']);
+
+// Route::get('/customer/delete/{id}',[CustomerController::class,'delete'])->name('customer.delete');
+
+Route::get('/',function(){
+    return view('index');
+});

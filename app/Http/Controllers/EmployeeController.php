@@ -28,5 +28,8 @@ class EmployeeController extends Controller
         $employee->dob = $request['dob'];
         $employee->password = md5($request['password']);
         $employee->save();
+
+        
     }
+   
 }
